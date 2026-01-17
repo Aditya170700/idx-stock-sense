@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 import { getRealTimeMarketStatus, type MarketStatus } from '@/app/actions/market-status';
@@ -118,13 +119,13 @@ export function Navbar() {
 
                         {/* Links */}
                         <div className="flex items-center gap-4">
-                            <a
-                                href="#"
+                            <Link
+                                href="/manual"
                                 className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                                 aria-label="Documentation"
                             >
                                 <BookOpen className="w-5 h-5" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

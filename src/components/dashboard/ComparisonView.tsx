@@ -168,175 +168,177 @@ export function ComparisonView() {
                 <div className="space-y-6">
                     {/* Comparison Table */}
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-                                        <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 dark:text-white">
-                                            Metrik
-                                        </th>
-                                        <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900 dark:text-white">
-                                            {state.data.stockA.symbol}
-                                        </th>
-                                        <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900 dark:text-white">
-                                            {state.data.stockB.symbol}
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                                    {/* Harga */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Harga
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockA.analysis.price, 'price')}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockB.analysis.price, 'price')}
-                                        </td>
-                                    </tr>
+                        <div className="overflow-x-auto w-full sm:mx-0">
+                            <div className="inline-block min-w-full align-middle">
+                                <table className="w-full min-w-[600px]">
+                                    <thead>
+                                        <tr className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+                                            <th className="px-4 sm:px-6 py-4 text-left text-xs sm:text-sm font-semibold text-gray-900 dark:text-white">
+                                                Metrik
+                                            </th>
+                                            <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-gray-900 dark:text-white">
+                                                {state.data.stockA.symbol}
+                                            </th>
+                                            <th className="px-4 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold text-gray-900 dark:text-white">
+                                                {state.data.stockB.symbol}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                                        {/* Harga */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Harga
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockA.analysis.price, 'price')}
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockB.analysis.price, 'price')}
+                                            </td>
+                                        </tr>
 
-                                    {/* Trend / Signal */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Trend / Signal
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center font-semibold',
-                                            state.data.winners.momentum === 'A'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {state.data.stockA.analysis.signal}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center font-semibold',
-                                            state.data.winners.momentum === 'B'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {state.data.stockB.analysis.signal}
-                                        </td>
-                                    </tr>
+                                        {/* Trend / Signal */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Trend / Signal
+                                            </td>
+                                            <td className={cn(
+                                                'px-6 py-4 text-sm text-center font-semibold',
+                                                state.data.winners.momentum === 'A'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {state.data.stockA.analysis.signal}
+                                            </td>
+                                            <td className={cn(
+                                                'px-6 py-4 text-sm text-center font-semibold',
+                                                state.data.winners.momentum === 'B'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {state.data.stockB.analysis.signal}
+                                            </td>
+                                        </tr>
 
-                                    {/* RSI */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            RSI
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.momentum === 'A'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {state.data.stockA.analysis.rsi.toFixed(2)}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.momentum === 'B'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {state.data.stockB.analysis.rsi.toFixed(2)}
-                                        </td>
-                                    </tr>
+                                        {/* RSI */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                RSI
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.momentum === 'A'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {state.data.stockA.analysis.rsi.toFixed(2)}
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.momentum === 'B'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {state.data.stockB.analysis.rsi.toFixed(2)}
+                                            </td>
+                                        </tr>
 
-                                    {/* Valuasi (PER) */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Valuasi (PER)
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.valuation === 'A'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockA.fundamentalData?.trailingPE, 'ratio')}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.valuation === 'B'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockB.fundamentalData?.trailingPE, 'ratio')}
-                                        </td>
-                                    </tr>
+                                        {/* Valuasi (PER) */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Valuasi (PER)
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.valuation === 'A'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockA.fundamentalData?.trailingPE, 'ratio')}
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.valuation === 'B'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockB.fundamentalData?.trailingPE, 'ratio')}
+                                            </td>
+                                        </tr>
 
-                                    {/* Profitabilitas (EPS) */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Profitabilitas (EPS)
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.profitability === 'A'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockA.fundamentalData?.trailingEps, 'price')}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.profitability === 'B'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {formatValue(state.data.stockB.fundamentalData?.trailingEps, 'price')}
-                                        </td>
-                                    </tr>
+                                        {/* Profitabilitas (EPS) */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Profitabilitas (EPS)
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.profitability === 'A'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockA.fundamentalData?.trailingEps, 'price')}
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.profitability === 'B'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {formatValue(state.data.stockB.fundamentalData?.trailingEps, 'price')}
+                                            </td>
+                                        </tr>
 
-                                    {/* Bandar Flow */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Bandar Flow
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.bandarmology === 'A'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {getBandarmologyStatus(state.data.stockA.analysis.bandarFlow?.status)}
-                                        </td>
-                                        <td className={cn(
-                                            'px-6 py-4 text-sm text-center',
-                                            state.data.winners.bandarmology === 'B'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
-                                                : 'text-gray-900 dark:text-white'
-                                        )}>
-                                            {getBandarmologyStatus(state.data.stockB.analysis.bandarFlow?.status)}
-                                        </td>
-                                    </tr>
+                                        {/* Bandar Flow */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Bandar Flow
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.bandarmology === 'A'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {getBandarmologyStatus(state.data.stockA.analysis.bandarFlow?.status)}
+                                            </td>
+                                            <td className={cn(
+                                                'px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm text-center',
+                                                state.data.winners.bandarmology === 'B'
+                                                    ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold'
+                                                    : 'text-gray-900 dark:text-white'
+                                            )}>
+                                                {getBandarmologyStatus(state.data.stockB.analysis.bandarFlow?.status)}
+                                            </td>
+                                        </tr>
 
-                                    {/* Confidence Score */}
-                                    <tr>
-                                        <td className="px-6 py-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                            Confidence Score
-                                        </td>
-                                        <td className="px-6 py-4 text-sm text-center text-gray-900 dark:text-white">
-                                            {state.data.stockA.analysis.confidenceScore}/100
-                                        </td>
-                                        <td className="px-6 py-4 text-sm text-center text-gray-900 dark:text-white">
-                                            {state.data.stockB.analysis.confidenceScore}/100
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        {/* Confidence Score */}
+                                        <tr>
+                                            <td className="px-4 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
+                                                Confidence Score
+                                            </td>
+                                            <td className="px-6 py-4 text-sm text-center text-gray-900 dark:text-white">
+                                                {state.data.stockA.analysis.confidenceScore}/100
+                                            </td>
+                                            <td className="px-6 py-4 text-sm text-center text-gray-900 dark:text-white">
+                                                {state.data.stockB.analysis.confidenceScore}/100
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                     {/* Verdict Section */}
-                    <div className="bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl shadow-lg p-6 border border-blue-200 dark:border-blue-800">
+                    <div className="bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-blue-200 dark:border-blue-800">
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                             Verdict
                         </h3>

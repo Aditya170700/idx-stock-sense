@@ -86,20 +86,20 @@ export function Navbar() {
                 'shadow-sm'
             )}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-14 sm:h-16">
                     {/* Left Side - Brand */}
                     <div className="flex items-center gap-3">
-                        <h1 className="text-2xl font-bold bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                        <h1 className="text-lg sm:text-xl md:text-2xl font-bold bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                             IDX Stock Sense
                         </h1>
-                        <span className="px-2 py-0.5 text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                        <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full">
                             Beta
                         </span>
                     </div>
 
                     {/* Right Side - Status & Links */}
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
                         {/* Market Status */}
                         <div className="flex items-center gap-2">
                             <div
@@ -110,7 +110,7 @@ export function Navbar() {
                                 )}
                             />
                             <span className={cn(
-                                'text-sm font-medium mt-1',
+                                'text-xs sm:text-sm font-medium mt-1 hidden sm:inline',
                                 isLoading ? 'text-gray-400 dark:text-gray-500' : statusStyles.textColor
                             )}>
                                 {isLoading ? 'Loading...' : statusMessage}

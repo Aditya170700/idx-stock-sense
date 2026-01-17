@@ -139,10 +139,10 @@ export function SingleAnalysisView() {
             <div className="mb-8">
                 <form
                     action={formAction}
-                    className="w-full max-w-2xl mx-auto"
+                    className="w-full max-w-2xl mx-auto px-2 sm:px-0"
                     onSubmit={() => setIsSubmitting(true)}
                 >
-                    <div className="flex gap-3">
+                    <div className="flex gap-2 sm:gap-3">
                         <input
                             type="text"
                             name="ticker"
@@ -177,9 +177,9 @@ export function SingleAnalysisView() {
 
             {/* Results - Grid Layout */}
             {state?.success && state.data && (
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
                     {/* Left Column - Main Analysis (2 columns on desktop) */}
-                    <div className="lg:col-span-2 space-y-6">
+                    <div className="lg:col-span-2 space-y-4 sm:space-y-6 order-1">
                         {/* Price Card */}
                         <PriceCard data={state.data} />
 
@@ -229,7 +229,7 @@ export function SingleAnalysisView() {
                     </div>
 
                     {/* Right Column - Quick Guide (1 column on desktop) */}
-                    <div className="lg:col-span-1 space-y-6">
+                    <div className="lg:col-span-1 space-y-4 sm:space-y-6 order-2">
                         {/* Bandar Flow Card */}
                         {state.data.bandarFlow && (
                             <BandarFlowCard data={state.data.bandarFlow} />

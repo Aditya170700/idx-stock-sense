@@ -77,11 +77,11 @@ export function StockChart({ data, predPrice }: StockChartProps) {
     }] : [];
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-3 sm:p-4 lg:p-6 border border-gray-200 dark:border-gray-700">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Price Chart
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={300} className="sm:h-[350px] lg:h-[400px]">
                 <ComposedChart
                     data={chartData}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

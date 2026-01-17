@@ -126,62 +126,64 @@ export function PredictionAllView() {
             {/* Results Table */}
             {!loading && results.length > 0 && (
                 <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-                    <div className="overflow-x-auto">
-                        <table className="w-full border-collapse">
-                            <thead className="bg-gray-100 dark:bg-gray-900">
-                                <tr>
-                                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
-                                        Code
-                                    </th>
-                                    <th className="px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
-                                        Close Price
-                                    </th>
-                                    <th className="px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
-                                        Pred Price
-                                    </th>
-                                    <th className="px-4 py-3 text-center text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
-                                        Signal
-                                    </th>
-                                    <th className="px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
-                                        Confidence
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {results.map((result) => {
-                                    const predPrice = result.predPrice ?? result.price;
-                                    return (
-                                        <tr
-                                            key={result.symbol}
-                                            className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors border-b border-gray-200 dark:border-gray-700"
-                                        >
-                                            <td className="px-4 py-3 text-sm font-medium text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
-                                                {result.symbol}
-                                            </td>
-                                            <td className="px-4 py-3 text-sm text-right text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
-                                                Rp {result.price.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                                            </td>
-                                            <td className="px-4 py-3 text-sm text-right text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
-                                                Rp {predPrice.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                                            </td>
-                                            <td className="px-4 py-3 text-sm text-center border-r border-gray-200 dark:border-gray-700">
-                                                <span
-                                                    className={cn(
-                                                        'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold',
-                                                        getSignalBadgeClass(result.signal)
-                                                    )}
-                                                >
-                                                    {result.signal}
-                                                </span>
-                                            </td>
-                                            <td className="px-4 py-3 text-sm text-right text-gray-900 dark:text-white">
-                                                {result.confidenceScore}%
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                    <div className="overflow-x-auto w-full sm:mx-0">
+                        <div className="inline-block min-w-full align-middle">
+                            <table className="w-full border-collapse">
+                                <thead className="bg-gray-100 dark:bg-gray-900">
+                                    <tr>
+                                        <th className="px-3 sm:px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
+                                            Code
+                                        </th>
+                                        <th className="px-3 sm:px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
+                                            Close Price
+                                        </th>
+                                        <th className="px-3 sm:px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
+                                            Pred Price
+                                        </th>
+                                        <th className="px-3 sm:px-4 py-3 text-center text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
+                                            Signal
+                                        </th>
+                                        <th className="px-3 sm:px-4 py-3 text-right text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700">
+                                            Confidence
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {results.map((result) => {
+                                        const predPrice = result.predPrice ?? result.price;
+                                        return (
+                                            <tr
+                                                key={result.symbol}
+                                                className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors border-b border-gray-200 dark:border-gray-700"
+                                            >
+                                                <td className="px-3 sm:px-4 py-3 text-sm font-medium text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
+                                                    {result.symbol}
+                                                </td>
+                                                <td className="px-3 sm:px-4 py-3 text-sm text-right text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
+                                                    Rp {result.price.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                                                </td>
+                                                <td className="px-3 sm:px-4 py-3 text-sm text-right text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700">
+                                                    Rp {predPrice.toLocaleString('id-ID', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                                                </td>
+                                                <td className="px-3 sm:px-4 py-3 text-sm text-center border-r border-gray-200 dark:border-gray-700">
+                                                    <span
+                                                        className={cn(
+                                                            'inline-flex items-center px-2 sm:px-2.5 py-0.5 rounded-full text-xs font-semibold',
+                                                            getSignalBadgeClass(result.signal)
+                                                        )}
+                                                    >
+                                                        {result.signal}
+                                                    </span>
+                                                </td>
+                                                <td className="px-3 sm:px-4 py-3 text-sm text-right text-gray-900 dark:text-white">
+                                                    {result.confidenceScore}%
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             )}

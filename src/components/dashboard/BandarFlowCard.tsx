@@ -105,7 +105,7 @@ export function BandarFlowCard({ data }: BandarFlowCardProps) {
     }));
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Analisis Aliran Dana (Bandarmology)
             </h3>
@@ -137,7 +137,7 @@ export function BandarFlowCard({ data }: BandarFlowCardProps) {
                     <div className="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
                         Perbandingan Harga vs Volume Akumulasi (20 hari terakhir)
                     </div>
-                    <ResponsiveContainer width="100%" height={150}>
+                    <ResponsiveContainer width="100%" height={200} className="sm:h-[180px] lg:h-[150px]">
                         <ComposedChart
                             data={normalizedChartData}
                             margin={{ top: 5, right: 5, left: 5, bottom: 5 }}

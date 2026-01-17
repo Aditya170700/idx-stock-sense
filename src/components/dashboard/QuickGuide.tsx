@@ -11,7 +11,7 @@ export function QuickGuide() {
         <div className={cn(
             'bg-linear-to-br from-blue-50 to-indigo-50',
             'dark:from-blue-900/20 dark:to-indigo-900/20',
-            'rounded-xl shadow-lg p-6 border border-blue-200 dark:border-blue-800'
+            'rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-blue-200 dark:border-blue-800'
         )}>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                 <BarChart3 className="w-6 h-6 text-blue-600 dark:text-blue-400" />

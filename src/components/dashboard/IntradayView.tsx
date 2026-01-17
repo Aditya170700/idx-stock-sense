@@ -256,11 +256,11 @@ export function IntradayView() {
 
             {/* Results - 2 Column Grid Layout */}
             {state?.success && state.data && (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                     {/* COLUMN 1: Left Side - The Strategy */}
-                    <div className="space-y-6">
+                    <div className="space-y-4 sm:space-y-6 order-1">
                         {/* Signal Card */}
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                             <div className="space-y-4">
                                 <div className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
                                     SIGNAL INTRADAY
@@ -275,7 +275,7 @@ export function IntradayView() {
                                     );
                                     return (
                                         <div className={cn(
-                                            'text-5xl font-black tracking-tight',
+                                            'text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight',
                                             signal.color
                                         )}>
                                             {signal.text}
@@ -321,11 +321,11 @@ export function IntradayView() {
                         </div>
 
                         {/* Trading Plan Grid */}
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                                 Trading Plan
                             </h3>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-2 gap-2 sm:gap-4">
                                 {/* Entry */}
                                 <div className="border-2 border-blue-300 dark:border-blue-700 rounded-lg p-4 bg-blue-50 dark:bg-blue-900/20">
                                     <div className="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">
@@ -381,7 +381,7 @@ export function IntradayView() {
                         </div>
 
                         {/* Stats Box */}
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                                 Key Levels
                             </h3>
@@ -417,14 +417,14 @@ export function IntradayView() {
                     </div>
 
                     {/* COLUMN 2: Right Side - The Visuals */}
-                    <div className="space-y-6">
+                    <div className="space-y-4 sm:space-y-6 order-2">
                         {/* Chart */}
                         {currentDayChartData.chartData.length > 0 ? (
-                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                                     Intraday Movement (5m) vs VWAP
                                 </h3>
-                                <ResponsiveContainer width="100%" height={500}>
+                                <ResponsiveContainer width="100%" height={300} className="sm:h-[400px] lg:h-[500px]">
                                     <ComposedChart
                                         data={currentDayChartData.chartData.sort((a, b) => a.timestamp - b.timestamp)}
                                         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -500,7 +500,7 @@ export function IntradayView() {
                                 </ResponsiveContainer>
                             </div>
                         ) : (
-                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                                 <div className="flex items-center justify-center h-96 text-gray-500 dark:text-gray-400">
                                     Chart data loading...
                                 </div>
@@ -526,7 +526,7 @@ export function IntradayView() {
                         </div>
 
                         {/* Reasoning Box */}
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
                             <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                                 Analysis Reasoning
                             </h4>

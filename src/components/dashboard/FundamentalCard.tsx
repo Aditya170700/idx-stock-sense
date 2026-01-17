@@ -34,7 +34,7 @@ export function FundamentalCard({ badges }: FundamentalCardProps) {
     }
 
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-5 lg:p-6 border border-gray-200 dark:border-gray-700">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Fundamental Health Check
             </h3>

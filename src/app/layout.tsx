@@ -16,7 +16,29 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: "IDX Stock Sense - Stock Analysis & Prediction Dashboard",
-    description: "Stock Analysis & Prediction Dashboard for Indonesian Market",
+    description: "Aplikasi bantu analisa saham Indonesia dengan fitur Bandarmology, Intraday VWAP, dan Fundamental Check. Gratis.",
+    openGraph: {
+        title: "IDX Stock Sense - Stock Analysis & Prediction Dashboard",
+        description: "Cek kesehatan saham, bandarmology, dan sinyal intraday gratis.",
+        url: "https://idx-stock-sense.vercel.app",
+        siteName: "IDX Stock Sense",
+        images: [
+            {
+                url: "/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "IDX Stock Sense Dashboard Preview",
+            },
+        ],
+        locale: "id_ID",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "IDX Stock Sense",
+        description: "Analisa saham Indonesia jadi lebih mudah.",
+        images: ["/opengraph-image.png"],
+    },
 };
 
 export default function RootLayout({
